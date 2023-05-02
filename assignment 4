@@ -1,0 +1,3 @@
+This assignment is to create a front-end that simulate the creation of a new user, with personal details and addresses (home and shipping).
+The front-end was created using html, CSS, Bootstrap.
+The front-end connects to the databases (PostgreSQL) using NodeJs and http framework. (No use of any RESTful framework).
