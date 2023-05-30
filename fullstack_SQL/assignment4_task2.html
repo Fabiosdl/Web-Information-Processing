@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Assignment 4 - Fabio Lima </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Bootstrap for the form styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Use W3.CSS for the Modal -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 
+    <style>
+        /* Extra Styles for the Bootstrap Forms */
+        h1 {
+            font: 30px Verdana;
+            text-align: center;
+        }
+        h2 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        legend {
+            padding: 10px;
+            font: 30px Verdana
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment 4 - Fabio Lima </h1>
+    <br />
+    <form class="form-horizontal" id="personalInfoForm">  
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend>Personal Information</legend>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="Title">Title</label>
+    <div class="col-md-4">
+        <select id="Title" name="title" class="form-control" onchange="showOtherTitle()">
+        <option value="">- Please Select -</option>
+        <option value="Mx.">Mx.</option>
+        <option value="Ms.">Ms.</option>
+        <option value="Mr.">Mr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Miss">Miss</option>
+        <option value="Dr">Dr.</option>
+        <option value="Other">Other</option>
+        </select>
+    </div>
+    </div>
+
+    <!-- Text input-->
+    <div id="otherTitleDiv" class="form-group" style="display:none;">
+    <label class="col-md-4 control-label" for="othertitle"></label>  
+    <div class="col-md-4">
+    <input id="othertitle" name="othertitle" type="text" placeholder="Desired Title" class="form-control input-md">
+    <span class="help-block">Please insert your desired title.</span>  
+    </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">First Name(s) *</label>  
+    <div class="col-md-4">    
+    <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md">
+    <span class="help-block">Please insert your first name.</span>  
+    </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="Surname">Surname *</label>  
+    <div class="col-md-4">
+    <input id="Surname" name="surname" type="text" placeholder="Surname" class="form-control input-md">
+    <span class="help-block">Please insert your surname.</span>  
+    </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="mobile">Mobile Phone *</label>  
+    <div class="col-md-4">
+    <input id="mobile" name="mobile" type="text" placeholder="Mobile" class="form-control input-md">
+    <span class="help-block">Please insert your mobile phone.</span>  
+    </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+    <label class="col-md-4 control-label" for="email">E-mail Address *</label>  
+    <div class="col-md-4">
+    <input id="email" name="email" type="text" placeholder="E-mail" class="form-control input-md">
+    <span class="help-block">Please insert your email address.</span>  
+    </div>
+    </div>
+
+<!-- ========================   HOME ADDRESS ================ -->
+    </fieldset>
+
+    <fieldset>
+        
+      <!-- Form Name -->
+      <legend>Home Address</legend>
+        
+      <div class="container" id="homeaddress">
+      <!-- Text input-->
+      <div class="form-group">
+          <label class="col-md-4 control-label" for="address1">Address Line 1 *</label>  
+          <div class="col-md-4">
+          <input id="h_address1" name="home_address1" type="text" placeholder="Address Line 1" class="form-control input-md">
+            
+          </div>
+      </div>
+        
+      <!-- Text input-->
+      <div class="form-group">
+         <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+         <div class="col-md-4">
+         <input id="h_address2" name="home_address2" type="text" placeholder="Address Line 2" class="form-control input-md">
+        </div>
+      </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="town">Town *</label>  
+      <div class="col-md-4">
+      <input id="h_town" name="home_town" type="text" placeholder="Town" class="form-control input-md">        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="county">County / City *</label>  
+      <div class="col-md-4">
+      <input id="h_county" name="home_county" type="text" placeholder="County / City" class="form-control input-md">        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="eircode">Eircode</label>  
+      <div class="col-md-4">
+      <input id="h_eircode" name="home_eircode" type="text" placeholder="Eircode" class="form-control input-md">        
+      </div>
+    </div>
+    </div>
+
+    <!-- Multiple Checkboxes -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="checkaddress">Your ship address is the same as your home address?</label>
+      <div class="col-md-4">
+      <div class="checkbox">
+        <label for="checkaddress-0">
+          <input type="checkbox" name="checkaddress" id="checkaddress-0" value="1" onchange="shippingaddress()">
+          yes
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- ========================   SHIPPING ADDRESS ================ -->
+    
+    <fieldset>       
+      
+      <!-- Form Name -->
+      <legend>Shipping Address</legend>      
+      
+      <div class="container" id="shippingaddress">
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="address1">Address Line 1 *</label>  
+        <div class="col-md-4">
+        <input id="s_address1" name="ship_address1" type="text" placeholder="Address Line 1" class="form-control input-md">
+          
+        </div>
+      </div>
+      
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="address2">Address Line 2</label>  
+        <div class="col-md-4">
+        <input id="s_address2" name="ship_address2" type="text" placeholder="Address Line 2" class="form-control input-md">
+      </div>
+    </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="town">Town *</label>  
+    <div class="col-md-4">
+    <input id="s_town" name="ship_town" type="text" placeholder="Town" class="form-control input-md">        
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="county">County / City *</label>  
+    <div class="col-md-4">
+    <input id="s_county" name="ship_county" type="text" placeholder="County / City" class="form-control input-md">        
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="eircode">Eircode</label>  
+    <div class="col-md-4">
+    <input id="s_eircode" name="ship_eircode" type="text" placeholder="Eircode" class="form-control input-md">        
+    </div>
+  </div>
+  </div>  
+  </fieldset>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="submit_personal"> </label>
+    <div class="col-md-4">
+    <button id="submit_personal" name="submit_personal" class="btn btn-primary" type="button" onclick="submitForm(event)">Submit</button>
+    </div>
+    </div>
+  </div>
+  </form>
+  <form class="form-horizontal">
+    <fieldset>
+    
+    <!-- Form Name -->
+    <legend>Show User DataBase</legend>
+    
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textarea">User Database</label>
+      <div class="col-md-4">                     
+        <textarea class="form-control" id="textarea" name="textarea">Retrieved user database displayed here!</textarea>
+      </div>
+    </div>
+    
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"></label>
+      <div class="col-md-4">
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="button">Get User Database</button>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    <script>
+      document.getElementById('singlebutton').addEventListener('click', async () => {
+        try {
+          const response = await fetch('/api/users');
+          if (response.ok) {
+            const users = await response.json();
+            const formattedJson = JSON.stringify(users, null, 2);
+            document.getElementById('textarea').value = formattedJson;
+          } else {
+            document.getElementById('textarea').value = 'Error fetching user database';
+          }
+        } catch (error) {
+          console.error(error);
+          document.getElementById('textarea').value = 'Error fetching user database';
+        }
+      });
+      </script>
+      <script src="html_functions.js" defer></script>
+      <script src="assignment4_task2.js" defer></script>
+</body>
+
+</html>
